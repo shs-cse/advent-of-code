@@ -16,3 +16,4 @@ wheels/
 
 # Project
 .DS_store
+temp/puzzle.out

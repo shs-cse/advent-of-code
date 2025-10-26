@@ -1,3 +1,4 @@
-# test save
 def soln(buff:str)->None:
-    print(buff)
+    up = buff.count("(")
+    down = buff.count(")")
+    print(up-down)

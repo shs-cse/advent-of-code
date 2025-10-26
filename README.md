@@ -61,3 +61,11 @@
     bash solutions/save.sh c
     ```
     </details>
+
+# Completed Solutions
+| Puzzle | C | Python | Rust |
+|:-:|:-:|:-:|:-:|
+1_1 | &#x2611; | &#x2611; | &#x2611; |
+1_2 | &#x2611; | &#x2611; | &#x2611; |
+1 | &#x2611;&#x2611; | &#x2611;&#x2611; | &#x2611;&#x2611; |
+2 | &#x2611;&#x2610;

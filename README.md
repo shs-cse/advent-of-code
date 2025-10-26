@@ -45,7 +45,7 @@
     <details><summary>[click for code without alias]</summary>
 
     ```sh
-    bash run.sh py
+    bash solutions/run.sh py
     ```
     </details>
 

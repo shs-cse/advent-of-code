@@ -9,8 +9,9 @@ fn main() -> io::Result<()> {
     let reader = BufReader::new(file);
 
     for buff in reader.lines() {
-        puzzle::soln(&buff?);
+        puzzle::process(&buff?);
     }
+    puzzle::result();
 
     Ok(())
 }

@@ -41,7 +41,7 @@ load_file () {
 
 load_file " Input" "solutions/../inputs/$YEAR/$DAY.txt"
 
-echo "$YEAR/${DAY}_$PART" > "temp/puzzle"
+echo "$YEAR/${DAY}_$PART" > "temp/.puzzle"
 
 load_file "     C" "solutions/$YEAR/${DAY}_$PART.c"
 

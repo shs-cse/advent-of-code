@@ -7,7 +7,7 @@ if [[ ! "$1" =~ ^c|py|rs$ ]]; then
     exit 1
 fi
 
-IFS= read -r FIRST_LINE < "temp/puzzle"
+IFS= read -r FIRST_LINE < "temp/.puzzle"
 
 YEAR="${FIRST_LINE%%/*}"
 mkdir -p "solutions/$YEAR"

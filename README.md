@@ -48,3 +48,16 @@
     bash run.sh py
     ```
     </details>
+
+# Save Solution
+- Write your solution in `temp/puzzle.lang` file.
+- Save your solution to proper solution folder and file.
+    ```sh
+    save c
+    ```
+    <details><summary>[click for code without alias]</summary>
+
+    ```sh
+    bash solutions/save.sh c
+    ```
+    </details>

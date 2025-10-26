@@ -3,4 +3,8 @@ name = "advent-of-code"
 version = "0.1.0"
 edition = "2024"
 
+[[bin]] # since src/main.rs is replaced by main.rs
+name = "advent-of-code"
+path = "main.rs"
+
 [dependencies]

@@ -15,12 +15,6 @@ if [[ ! "$3" =~ ^1|2$ ]]; then
     exit 1
 fi
 
-if [[ ! "$4" =~ ^|c|py|rs$ ]]; then
-    echo "Error: arg did not match c/py/rs"
-    exit 1
-fi
-
-
 YEAR=$1
 DAY=$2
 PART=$3
@@ -53,12 +47,17 @@ load_file () {
 
 load_file "txt"
 
-echo "$YEAR/${DAY}_$PART" > "temp/.puzzle"
+IFS= read -r FIRST_LINE < "temp/.puzzle"
 
-if [ "$#" -eq 4 ]; then
-    load_file $4
-else
-    load_file "c"
-    load_file "py"
-    load_file "rs"
-fi
+LANGUAGES=("c" "py" "rs")
+for lang in "${LANGUAGES[@]}"; do
+    if ! cmp -s "solutions/$FIRST_LINE.$lang" "temp/puzzle.$lang"; then
+        echo ".$lang: aborted, file has not been saved."
+        exit 1
+    fi
+done
+for lang in "${LANGUAGES[@]}"; do
+    load_file "$lang"
+done
+
+echo "$YEAR/${DAY}_$PART" > "temp/.puzzle"

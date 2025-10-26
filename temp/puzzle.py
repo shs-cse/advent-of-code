@@ -1,13 +1,6 @@
-displacement = {"(": 1, ")": -1}
-
-
 def process(buff: str) -> None:
-    floor = 0
-    for i, move in enumerate(buff, 1):
-        floor += displacement[move]
-        if floor == -1:
-            break
-    print(i)
+    count_up = buff.count("(")
+    print(2*count_up - len(buff))
 
 
 def solution() -> None:

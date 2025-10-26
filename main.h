@@ -1,4 +1,5 @@
 #ifndef TEMP_H
 #define TEMP_H
-void soln(char* buff);
+void process(char* buff);
+void result();
 #endif

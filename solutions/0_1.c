@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include "../main.h"
 
-void soln(char* buff){
+void process(char* buff){
     printf("%s\n", buff);
+}
+
+void result(){
+    printf("complete!\n");
 }

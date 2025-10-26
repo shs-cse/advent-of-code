@@ -7,7 +7,8 @@ int main()
     char buff[100];
 
     while (fgets(buff, sizeof buff, fp))
-        soln(buff);
+        process(buff);
+    result();
 
     fclose(fp);
     return 0;

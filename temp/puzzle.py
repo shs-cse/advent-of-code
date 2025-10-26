@@ -1,4 +1,8 @@
-def soln(buff:str)->None:
+def process(buff: str) -> None:
     up = buff.count("(")
     down = buff.count(")")
-    print(up-down)
+    print(up - down)
+
+
+def result() -> None:
+    pass

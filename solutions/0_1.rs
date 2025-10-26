@@ -1,7 +1,7 @@
-pub fn process(buff:&str){
+pub fn process(buff: &str) {
     println!("{buff}");
 }
 
-pub fn result(){
+pub fn solution() {
     println!("complete!")
 }

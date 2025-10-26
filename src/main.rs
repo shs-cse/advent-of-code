@@ -1,4 +1,4 @@
-#[path="../temp/puzzle.rs"]
+#[path = "../temp/puzzle.rs"]
 mod puzzle;
 
 use std::fs::File;
@@ -11,7 +11,7 @@ fn main() -> io::Result<()> {
     for buff in reader.lines() {
         puzzle::process(&buff?);
     }
-    puzzle::result();
+    puzzle::solution();
 
     Ok(())
 }

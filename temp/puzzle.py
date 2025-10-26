@@ -4,5 +4,5 @@ def process(buff: str) -> None:
     print(up - down)
 
 
-def result() -> None:
+def solution() -> None:
     pass

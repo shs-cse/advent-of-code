@@ -3,7 +3,8 @@
 
 int current_floor = 0;
 
-void process(char* buff){
+void process(char *buff)
+{
     for (int i = 0; buff[i]; i++)
         if (buff[i] == '(')
             current_floor++;
@@ -11,6 +12,7 @@ void process(char* buff){
             current_floor--;
 }
 
-void result(){
+void solution()
+{
     printf("%d\n", current_floor);
 }

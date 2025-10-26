@@ -2,5 +2,5 @@ def process(buff: str) -> None:
     print(buff)
 
 
-def result() -> None:
+def solution() -> None:
     print("complete!")

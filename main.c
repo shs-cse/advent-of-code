@@ -8,7 +8,7 @@ int main()
 
     while (fgets(buff, sizeof buff, fp))
         process(buff);
-    result();
+    solution();
 
     fclose(fp);
     return 0;

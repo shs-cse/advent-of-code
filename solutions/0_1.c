@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include "../main.h"
 
-void process(char* buff){
+void process(char *buff)
+{
     printf("%s\n", buff);
 }
 
-void result(){
+void solution()
+{
     printf("complete!\n");
 }

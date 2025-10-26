@@ -12,4 +12,7 @@ IFS= read -r FIRST_LINE < "temp/.puzzle"
 YEAR="${FIRST_LINE%%/*}"
 mkdir -p "solutions/$YEAR"
 
-cp "temp/puzzle.$1" "solutions/$FIRST_LINE.$1"
+SRC_FILE="temp/puzzle.$1"
+DEST_FILE="solutions/$FIRST_LINE.$1"
+cp "$SRC_FILE" "$DEST_FILE"
+echo "Saved to $DEST_FILE"

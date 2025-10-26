@@ -15,6 +15,11 @@ if [[ ! "$3" =~ ^1|2$ ]]; then
     exit 1
 fi
 
+if [[ ! "$4" =~ ^|c|py|rs$ ]]; then
+    echo "Error: arg did not match c/py/rs"
+    exit 1
+fi
+
 
 YEAR=$1
 DAY=$2
@@ -23,28 +28,37 @@ PART=$3
 # SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 load_file () {
-    echo -n "$1: "
-    FILE_EXTENSION="${2##*.}"
-    SRC_FILE="$2"
+    FILE_EXTENSION="$1"
     DEST_FILE="temp/puzzle.$FILE_EXTENSION"
-    if [ ! -f "$2" ]; then
+    echo -n ".$FILE_EXTENSION: "
+    if [[ "$FILE_EXTENSION" == "txt" ]]; then
+        SRC_FILE="solutions/../inputs/$YEAR/$DAY.$FILE_EXTENSION"
+    else
+        SRC_FILE="solutions/$YEAR/${DAY}_$PART.$FILE_EXTENSION"
+    fi
+    if [ ! -f "$SRC_FILE" ]; then
         if [[ "$FILE_EXTENSION" == "txt" ]]; then
             echo "failed. Either requested input has not been fetched or doesn't exist at all."
             exit 1
         fi
-        SRC_FILE="solutions/0_1.$FILE_EXTENSION"
+        SRC_FILE="solutions/$YEAR/${DAY}_1.$FILE_EXTENSION"
+        if [ ! -f "$SRC_FILE" ]; then
+            SRC_FILE="solutions/0_1.$FILE_EXTENSION"
+        fi
     fi
     echo -n "copying $SRC_FILE to $DEST_FILE... "
     cp "$SRC_FILE" "$DEST_FILE"
     echo "complete."
 }
 
-load_file " Input" "solutions/../inputs/$YEAR/$DAY.txt"
+load_file "txt"
 
 echo "$YEAR/${DAY}_$PART" > "temp/.puzzle"
 
-load_file "     C" "solutions/$YEAR/${DAY}_$PART.c"
-
-load_file "Python" "solutions/$YEAR/${DAY}_$PART.py"
-
-load_file "  Rust" "solutions/$YEAR/${DAY}_$PART.rs"
+if [ "$#" -eq 4 ]; then
+    load_file $4
+else
+    load_file "c"
+    load_file "py"
+    load_file "rs"
+fi

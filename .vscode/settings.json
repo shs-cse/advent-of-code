@@ -1,0 +1,4 @@
+{
+    "C_Cpp.codeAnalysis.clangTidy.fallbackConfig": "",
+    "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4}"
+}
